@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { X, Shield, Zap, Sword, ScrollText } from 'lucide-react';
+import { X, Shield, Star, Minus, FileText } from 'lucide-react';
 
 interface CharacterModalProps {
   character: any;
@@ -47,7 +47,7 @@ export default function CharacterModal({ character, isOpen, onClose }: Character
             {/* Atributos Grid */}
             <div>
               <h3 className="flex items-center gap-2 text-sm font-bold text-[#555] uppercase tracking-widest mb-4">
-                <Shield size={16} /> Atributos Primários
+                              <Shield size={16} /> Atributos Primários
               </h3>
               <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
                 {['FOR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'].map((attr) => (
@@ -63,7 +63,7 @@ export default function CharacterModal({ character, isOpen, onClose }: Character
             <div className="grid sm:grid-cols-2 gap-8">
               <div>
                 <h3 className="flex items-center gap-2 text-sm font-bold text-[#555] uppercase tracking-widest mb-4">
-                  <Sword size={16} /> Equipamento
+                                  <Minus size={16} /> Equipamento
                 </h3>
                 <p className="text-[#b0b0b0] text-sm leading-relaxed whitespace-pre-wrap">
                   {character.equipment || 'Nenhum equipamento listado.'}
@@ -71,7 +71,7 @@ export default function CharacterModal({ character, isOpen, onClose }: Character
               </div>
               <div>
                 <h3 className="flex items-center gap-2 text-sm font-bold text-[#555] uppercase tracking-widest mb-4">
-                  <ScrollText size={16} /> Perícias & Notas
+                                  <FileText size={16} /> Perícias & Notas
                 </h3>
                 <p className="text-[#b0b0b0] text-sm leading-relaxed whitespace-pre-wrap">
                   {character.skills || 'Nenhuma perícia listada.'}

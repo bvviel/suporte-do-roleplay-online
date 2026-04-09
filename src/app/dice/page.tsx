@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Sidebar from '@/components/layout/Sidebar';
-import { History, Dices } from 'lucide-react';
+import { Clock, Grid2X2 } from 'lucide-react';
 
 export default function DicePage() {
   const [result, setResult] = useState<number | null>(null);
@@ -26,7 +26,7 @@ export default function DicePage() {
       <main className="flex-1 ml-64 p-10 flex flex-col items-center justify-center">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-black text-white italic tracking-tighter mb-4 flex items-center justify-center gap-4">
-            <Dices size={48} className="text-[#e91e63]" /> DADO D20 INTELIGENTE
+                <Grid2X2 size={48} className="text-[#e91e63]" /> DADO D20 INTELIGENTE
           </h1>
           <p className="text-[#b0b0b0] max-w-md mx-auto">
             Role o destino da sua sessão. O Obsidian Codex nunca mente (quase nunca).
@@ -56,7 +56,7 @@ export default function DicePage() {
 
         <div className="w-full max-w-md bg-[#1e1e1e] rounded-xl p-6 border border-[#2a2a2a]">
           <h3 className="flex items-center gap-2 text-sm font-bold text-[#b0b0b0] uppercase tracking-widest mb-4 border-b border-[#2a2a2a] pb-2">
-            <History size={16} /> Histórico de Rolagem
+                        <Clock size={16} /> Histórico de Rolagem
           </h3>
           <div className="flex flex-wrap gap-2">
             {history.length === 0 ? (

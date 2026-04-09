@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Users, Dices, Settings, LogOut } from 'lucide-react';
+import { LayoutDashboard, Users, Grid2X2, Settings, LogOut } from 'lucide-react';
 import { supabase } from '@/lib/supabaseClient';
 
 export default function Sidebar() {
@@ -11,7 +11,7 @@ export default function Sidebar() {
   const navItems = [
     { name: 'Grimório', href: '/dashboard', icon: LayoutDashboard },
     { name: 'Personagens', href: '/characters', icon: Users },
-    { name: 'Dados', href: '/dice', icon: Dices },
+    { name: 'Dados', href: '/dice', icon: Grid2X2 },
     { name: 'Configurações', href: '/settings', icon: Settings },
   ];
 

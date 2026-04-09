@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Sidebar from '@/components/layout/Sidebar';
 import { supabase } from '@/lib/supabaseClient';
 import { useRouter } from 'next/navigation';
-import { Save, User, Swords, Shield, Scroll } from 'lucide-react';
+import { Save, User, Crosshair, Shield, FileText } from 'lucide-react';
 
 export default function NewCharacter() {
   const router = useRouter();
@@ -123,7 +123,7 @@ export default function NewCharacter() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
               <h3 className="flex items-center gap-2 text-sm font-bold text-[#e91e63] uppercase tracking-widest mb-2">
-                <Swords size={16} /> Equipamento & Itens
+                                <Crosshair size={16} /> Equipamento & Itens
               </h3>
               <textarea 
                 name="equipment"
@@ -136,7 +136,7 @@ export default function NewCharacter() {
             </div>
             <div className="space-y-4">
               <h3 className="flex items-center gap-2 text-sm font-bold text-[#e91e63] uppercase tracking-widest mb-2">
-                <Scroll size={16} /> Lore & Antecedentes
+                                <FileText size={16} /> Lore & Antecedentes
               </h3>
               <textarea 
                 name="personal_info"
