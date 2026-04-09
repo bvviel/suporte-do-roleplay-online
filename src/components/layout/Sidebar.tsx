@@ -2,17 +2,16 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Users, Grid2X2, Settings, LogOut } from 'lucide-react';
 import { supabase } from '@/lib/supabaseClient';
 
 export default function Sidebar() {
   const pathname = usePathname();
 
   const navItems = [
-    { name: 'Grimório', href: '/dashboard', icon: LayoutDashboard },
-    { name: 'Personagens', href: '/characters', icon: Users },
-    { name: 'Dados', href: '/dice', icon: Grid2X2 },
-    { name: 'Configurações', href: '/settings', icon: Settings },
+    { name: '📖 Grimório', href: '/dashboard' },
+    { name: '👤 Personagens', href: '/characters' },
+    { name: '🎲 Dados', href: '/dice' },
+    { name: '⚙️ Configurações', href: '/settings' },
   ];
 
   const handleLogout = async () => {
@@ -30,7 +29,6 @@ export default function Sidebar() {
 
       <nav className="flex-1 space-y-1">
         {navItems.map((item) => {
-          const Icon = item.icon;
           const isActive = pathname === item.href;
           return (
             <Link
@@ -42,7 +40,6 @@ export default function Sidebar() {
                   : 'text-[#b0b0b0] hover:bg-[#2a2a2a] hover:text-white'
               }`}
             >
-              <Icon size={20} />
               {item.name}
             </Link>
           );
@@ -53,8 +50,7 @@ export default function Sidebar() {
         onClick={handleLogout}
         className="flex items-center gap-3 px-4 py-3 text-[#555] hover:text-red-400 transition-colors mt-auto"
       >
-        <LogOut size={20} />
-        Deslogar
+        🚪 Deslogar
       </button>
     </div>
   );

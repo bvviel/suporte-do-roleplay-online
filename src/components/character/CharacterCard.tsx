@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Heart } from 'lucide-react';
 
 interface CharacterCardProps {
   name: string;
@@ -33,9 +32,7 @@ export default function CharacterCard({ name, hpCurrent, hpMax, imageUrl, onClic
         
         <div className="space-y-1">
           <div className="flex justify-between text-xs text-[#b0b0b0] mb-1">
-            <span className="flex items-center gap-1 text-red-500 font-bold uppercase tracking-wider">
-              <Heart size={14} /> Vitalidade
-            </span>
+            <span className="text-red-500 font-bold uppercase tracking-wider">❤️ Vitalidade</span>
             <span>{hpCurrent} / {hpMax}</span>
           </div>
           <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">

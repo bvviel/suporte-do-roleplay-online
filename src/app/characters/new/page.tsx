@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Sidebar from '@/components/layout/Sidebar';
 import { supabase } from '@/lib/supabaseClient';
 import { useRouter } from 'next/navigation';
-import { Save, User, Crosshair, Shield, FileText } from 'lucide-react';
 
 export default function NewCharacter() {
   const router = useRouter();
@@ -58,17 +57,14 @@ export default function NewCharacter() {
       <Sidebar />
       <main className="flex-1 ml-64 p-8 max-w-5xl">
         <header className="mb-10">
-          <h1 className="text-4xl font-black italic tracking-tighter uppercase mb-2">FORJAR ALMA</h1>
+          <h1 className="text-4xl font-black italic tracking-tighter uppercase mb-2 text-white">⚔️ FORJAR ALMA</h1>
           <p className="text-[#b0b0b0]">Dê vida ao seu próximo grande herói.</p>
         </header>
 
         <form onSubmit={handleSubmit} className="space-y-8 bg-[#1e1e1e] p-8 rounded-2xl border border-[#2a2a2a]">
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Seção Básica */}
             <div className="space-y-4">
-              <h3 className="flex items-center gap-2 text-sm font-bold text-[#e91e63] uppercase tracking-widest mb-2">
-                <User size={16} /> Identidade
-              </h3>
+              <h3 className="text-sm font-bold text-[#e91e63] uppercase tracking-widest mb-2">👤 Identidade</h3>
               <div className="space-y-1">
                 <label className="text-xs text-[#555] uppercase font-bold">Nome do Personagem</label>
                 <input 
@@ -102,11 +98,8 @@ export default function NewCharacter() {
               </div>
             </div>
 
-            {/* Seção Atributos Rápidos */}
             <div className="space-y-4">
-               <h3 className="flex items-center gap-2 text-sm font-bold text-[#e91e63] uppercase tracking-widest mb-2">
-                <Shield size={16} /> Resistência
-              </h3>
+              <h3 className="text-sm font-bold text-[#e91e63] uppercase tracking-widest mb-2">🛡️ Resistência</h3>
               <div className="space-y-1">
                 <label className="text-xs text-[#555] uppercase font-bold">Vitalidade Máxima (HP)</label>
                 <input 
@@ -122,9 +115,7 @@ export default function NewCharacter() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <h3 className="flex items-center gap-2 text-sm font-bold text-[#e91e63] uppercase tracking-widest mb-2">
-                                <Crosshair size={16} /> Equipamento & Itens
-              </h3>
+              <h3 className="text-sm font-bold text-[#e91e63] uppercase tracking-widest mb-2">⚔️ Equipamento & Itens</h3>
               <textarea 
                 name="equipment"
                 value={formData.equipment}
@@ -135,9 +126,7 @@ export default function NewCharacter() {
               />
             </div>
             <div className="space-y-4">
-              <h3 className="flex items-center gap-2 text-sm font-bold text-[#e91e63] uppercase tracking-widest mb-2">
-                                <FileText size={16} /> Lore & Antecedentes
-              </h3>
+              <h3 className="text-sm font-bold text-[#e91e63] uppercase tracking-widest mb-2">📜 Lore & Antecedentes</h3>
               <textarea 
                 name="personal_info"
                 value={formData.personal_info}
@@ -155,7 +144,7 @@ export default function NewCharacter() {
               disabled={loading}
               className="flex items-center gap-2 bg-[#e91e63] hover:bg-[#ff4081] text-white px-10 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-[#e91e63]/20 disabled:opacity-50"
             >
-              <Save size={20} /> {loading ? 'Forjando...' : 'Salvar Ficha'}
+              💾 {loading ? 'Forjando...' : 'Salvar Ficha'}
             </button>
           </div>
         </form>

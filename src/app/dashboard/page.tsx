@@ -5,7 +5,6 @@ import Sidebar from '@/components/layout/Sidebar';
 import CharacterCard from '@/components/character/CharacterCard';
 import CharacterModal from '@/components/character/CharacterModal';
 import { supabase } from '@/lib/supabaseClient';
-import { Plus, Info } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Dashboard() {
@@ -46,21 +45,20 @@ export default function Dashboard() {
       <main className="flex-1 ml-64 p-8">
         <header className="flex justify-between items-end mb-12">
           <div>
-            <h1 className="text-4xl font-black italic tracking-tighter uppercase mb-2">GRIMÓRIO</h1>
+            <h1 className="text-4xl font-black italic tracking-tighter uppercase mb-2">📖 GRIMÓRIO</h1>
             <p className="text-[#b0b0b0]">Suas fichas e campanhas em um só lugar.</p>
           </div>
           <Link 
             href="/characters/new"
             className="flex items-center gap-2 bg-[#e91e63] hover:bg-[#ff4081] text-white px-6 py-3 rounded-xl font-bold transition-all shadow-lg hover:shadow-[#e91e63]/20"
           >
-            <Plus size={20} /> Criar Nova Ficha
+            ➕ Criar Nova Ficha
           </Link>
         </header>
 
-        {/* Mural de Campanhas (Placeholder Figma Style) */}
         <section className="mb-12">
            <div className="bg-[#1e1e1e] border border-dashed border-[#2a2a2a] p-8 rounded-2xl flex flex-col items-center justify-center text-center">
-              <Info size={40} className="text-[#555] mb-4" />
+              <div className="text-4xl mb-4">📋</div>
               <h3 className="text-xl font-bold text-[#888] mb-2">Mural do Mestre</h3>
               <p className="text-[#555] max-w-sm">Você ainda não faz parte de nenhuma campanha ativa. Peça o link de convite ao seu Mestre.</p>
            </div>

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { X, Shield, Star, Minus, FileText } from 'lucide-react';
 
 interface CharacterModalProps {
   character: any;
@@ -17,13 +16,12 @@ export default function CharacterModal({ character, isOpen, onClose }: Character
       <div className="bg-[#1e1e1e] w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border border-[#2a2a2a] relative shadow-2xl">
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 hover:bg-white/10 rounded-full transition-colors z-10"
+          className="absolute top-4 right-4 p-2 hover:bg-white/10 rounded-full transition-colors z-10 text-white text-xl font-bold"
         >
-          <X size={24} />
+          ✕
         </button>
 
         <div className="grid md:grid-cols-3 gap-0">
-          {/* Coluna Imagem/Básico */}
           <div className="md:col-span-1 bg-[#121212] p-8 border-r border-[#2a2a2a]">
             <img 
               src={character.appearance_url || 'https://via.placeholder.com/400x500'} 
@@ -36,19 +34,15 @@ export default function CharacterModal({ character, isOpen, onClose }: Character
             <p className="text-[#b0b0b0] font-medium mb-6">{character.class_name || 'Aventureiro(a)'}</p>
             
             <div className="space-y-4">
-              <StatItem label="Vida" value={`${character.vitality_current}/${character.vitality_max}`} color="text-red-500" />
-              <StatItem label="Poder" value={character.power_points || 0} color="text-blue-400" />
-              <StatItem label="Deslocamento" value={character.speed || '9m'} color="text-green-400" />
+              <StatItem label="❤️ Vida" value={`${character.vitality_current}/${character.vitality_max}`} color="text-red-500" />
+              <StatItem label="⚡ Poder" value={character.power_points || 0} color="text-blue-400" />
+              <StatItem label="🏃 Deslocamento" value={character.speed || '9m'} color="text-green-400" />
             </div>
           </div>
 
-          {/* Coluna Detalhes/Atributos */}
           <div className="md:col-span-2 p-8 space-y-8 bg-[#1e1e1e]">
-            {/* Atributos Grid */}
             <div>
-              <h3 className="flex items-center gap-2 text-sm font-bold text-[#555] uppercase tracking-widest mb-4">
-                              <Shield size={16} /> Atributos Primários
-              </h3>
+              <h3 className="text-sm font-bold text-[#555] uppercase tracking-widest mb-4">🛡️ Atributos Primários</h3>
               <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
                 {['FOR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'].map((attr) => (
                   <div key={attr} className="bg-[#2a2a2a] p-3 rounded-lg text-center border border-[#333]">
@@ -59,29 +53,23 @@ export default function CharacterModal({ character, isOpen, onClose }: Character
               </div>
             </div>
 
-            {/* Equipamento e Perícias */}
             <div className="grid sm:grid-cols-2 gap-8">
               <div>
-                <h3 className="flex items-center gap-2 text-sm font-bold text-[#555] uppercase tracking-widest mb-4">
-                                  <Minus size={16} /> Equipamento
-                </h3>
+                <h3 className="text-sm font-bold text-[#555] uppercase tracking-widest mb-4">⚔️ Equipamento</h3>
                 <p className="text-[#b0b0b0] text-sm leading-relaxed whitespace-pre-wrap">
                   {character.equipment || 'Nenhum equipamento listado.'}
                 </p>
               </div>
               <div>
-                <h3 className="flex items-center gap-2 text-sm font-bold text-[#555] uppercase tracking-widest mb-4">
-                                  <FileText size={16} /> Perícias & Notas
-                </h3>
+                <h3 className="text-sm font-bold text-[#555] uppercase tracking-widest mb-4">📜 Perícias & Notas</h3>
                 <p className="text-[#b0b0b0] text-sm leading-relaxed whitespace-pre-wrap">
                   {character.skills || 'Nenhuma perícia listada.'}
                 </p>
               </div>
             </div>
 
-            {/* Notas Adicionais */}
             <div className="pt-6 border-t border-[#2a2a2a]">
-               <h3 className="text-sm font-bold text-[#555] uppercase tracking-widest mb-2">Lore & Antecedentes</h3>
+               <h3 className="text-sm font-bold text-[#555] uppercase tracking-widest mb-2">📖 Lore & Antecedentes</h3>
                <p className="text-[#888] text-sm italic">
                  {character.personal_info || 'A história deste herói ainda está sendo escrita...'}
                </p>
