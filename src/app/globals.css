@@ -1,20 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #e91e63;
-  --color-brand-secondary: #ff4081;
-  --color-bg-base: #121212;
-  --color-bg-surface: #1e1e1e;
-  --color-bg-card: #2a2a2a;
-  --color-text-main: #f5f5f5;
-  --color-text-muted: #b0b0b0;
-  --color-vitality-red: #c62828;
+  --color-brand-primary: #cda66e;
+  --color-brand-secondary: #e4c2a5;
+  --color-bg-base: #0a0a0d;
+  --color-bg-surface: #16161a;
+  --color-bg-card: #1c1c20;
+  --color-text-main: #e4e4e4;
+  --color-text-muted: #888;
 }
 
 @layer base {
   body {
     background-color: var(--color-bg-base);
     color: var(--color-text-main);
-    font-family: Arial, Helvetica, sans-serif;
+    /* Priorizamos Inter para LEITURA FÁCIL */
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
+
+  /* Usamos Playfair apenas para títulos e elementos de DECORAÇÃO */
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-playfair), serif;
+    letter-spacing: 0;
   }
 }
+
+.custom-scrollbar::-webkit-scrollbar { height: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #111; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #cda66e; }
